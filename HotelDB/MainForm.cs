@@ -93,5 +93,11 @@ namespace DBHotel
             var newform = new AddCustomer();
             newform.ShowDialog();
         }
+
+        private void Customers_Click(object sender, EventArgs e)
+        {
+            var newform = new Clients();
+            newform.ShowDialog();
+        }
     }
 }

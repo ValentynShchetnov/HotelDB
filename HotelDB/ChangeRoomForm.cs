@@ -76,7 +76,7 @@ namespace DBHotel
         {
             string request = string.Empty;
 
-            request += $"DELETE * FROM room WHERE ID = {number}";
+            request += $"DELETE FROM room WHERE ID = {number}";
 
             return request;
         }
@@ -113,10 +113,10 @@ namespace DBHotel
 
             connector.OpenConnection();
             cmd.ExecuteNonQuery();
-            connector.CloseConnection();
 
             var resetAutoIncrementalCommand = new MySqlCommand("ALTER TABLE room AUTO_INCREMENT = 1", connector.GetConnection());
             resetAutoIncrementalCommand.ExecuteNonQuery();
+            connector.CloseConnection();
         }
 
         private int GetClass()
@@ -147,6 +147,7 @@ namespace DBHotel
             getRoomsClasses.Parameters.Add("@class", MySqlDbType.VarChar).Value = ClassBox.Text;
 
             adapter.SelectCommand = getRoomsClasses;
+            classTable = new DataTable();
             adapter.Fill(classTable);
 
             if (classTable.Rows.Count > 0)

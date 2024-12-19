@@ -6,7 +6,6 @@ namespace DBHotel
     public partial class AddRoomForm : Form
     {
         private DatabaseConnector connector = new();
-        private DataTable classTable = new DataTable();
         private MySqlDataAdapter adapter = new MySqlDataAdapter();
 
         public AddRoomForm()
@@ -115,6 +114,7 @@ namespace DBHotel
             getRoomsClasses.Parameters.Add("@class", MySqlDbType.VarChar).Value = Class.Text;
 
             adapter.SelectCommand = getRoomsClasses;
+            DataTable classTable = new DataTable();
             adapter.Fill(classTable);
 
             if (classTable.Rows.Count > 0)

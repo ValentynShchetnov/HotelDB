@@ -35,6 +35,7 @@ namespace DBHotel
             panel1 = new Panel();
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            AddCustomerButton = new Button();
             EditRoomButton = new Button();
             AddRoomButton = new Button();
             OccupiedCheckbox = new CheckBox();
@@ -50,7 +51,7 @@ namespace DBHotel
             ClassBox = new TextBox();
             SleepingPlaces = new TextBox();
             RoomNumbers = new TextBox();
-            AddCustomerButton = new Button();
+            Customers = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -74,6 +75,7 @@ namespace DBHotel
             // 
             // panel2
             // 
+            panel2.Controls.Add(Customers);
             panel2.Controls.Add(AddCustomerButton);
             panel2.Controls.Add(EditRoomButton);
             panel2.Controls.Add(AddRoomButton);
@@ -95,9 +97,19 @@ namespace DBHotel
             panel2.Size = new Size(282, 426);
             panel2.TabIndex = 1;
             // 
+            // AddCustomerButton
+            // 
+            AddCustomerButton.Location = new Point(177, 367);
+            AddCustomerButton.Name = "AddCustomerButton";
+            AddCustomerButton.Size = new Size(95, 23);
+            AddCustomerButton.TabIndex = 16;
+            AddCustomerButton.Text = "AddCustomer";
+            AddCustomerButton.UseVisualStyleBackColor = true;
+            AddCustomerButton.Click += AddCustomerButton_Click;
+            // 
             // EditRoomButton
             // 
-            EditRoomButton.Location = new Point(93, 389);
+            EditRoomButton.Location = new Point(96, 367);
             EditRoomButton.Name = "EditRoomButton";
             EditRoomButton.Size = new Size(75, 23);
             EditRoomButton.TabIndex = 15;
@@ -107,7 +119,7 @@ namespace DBHotel
             // 
             // AddRoomButton
             // 
-            AddRoomButton.Location = new Point(12, 389);
+            AddRoomButton.Location = new Point(15, 367);
             AddRoomButton.Name = "AddRoomButton";
             AddRoomButton.Size = new Size(75, 23);
             AddRoomButton.TabIndex = 14;
@@ -229,15 +241,15 @@ namespace DBHotel
             RoomNumbers.Size = new Size(100, 23);
             RoomNumbers.TabIndex = 0;
             // 
-            // AddCustomerButton
+            // Customers
             // 
-            AddCustomerButton.Location = new Point(174, 389);
-            AddCustomerButton.Name = "AddCustomerButton";
-            AddCustomerButton.Size = new Size(95, 23);
-            AddCustomerButton.TabIndex = 16;
-            AddCustomerButton.Text = "AddCustomer";
-            AddCustomerButton.UseVisualStyleBackColor = true;
-            AddCustomerButton.Click += AddCustomerButton_Click;
+            Customers.Location = new Point(96, 396);
+            Customers.Name = "Customers";
+            Customers.Size = new Size(75, 23);
+            Customers.TabIndex = 17;
+            Customers.Text = "Customers";
+            Customers.UseVisualStyleBackColor = true;
+            Customers.Click += Customers_Click;
             // 
             // MainForm
             // 
@@ -276,5 +288,6 @@ namespace DBHotel
         private Button AddRoomButton;
         private Button EditRoomButton;
         private Button AddCustomerButton;
+        private Button Customers;
     }
 }
